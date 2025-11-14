@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Support Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login-screen" class="login-container">
+    <div class="login-card">
+      <h1>Support Portal Login</h1>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter password" required />
+        </div>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <div id="login-msg" class="status"></div>
+      <p class="help-text">Demo credentials:<br>
+        Client: client@demo.com / password123<br>
+        Agent: agent@demo.com / password123
+      </p>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app-screen" style="display:none;">
+    <header class="header">
+      <div class="header-container">
+        <h1>Company Support Portal</h1>
+        <p id="user-info"></p>
+        <button id="logout-btn" class="btn-logout">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Ticket Submission (Clients only) -->
+      <section id="submit-section" class="card">
+        <h2>Submit a Ticket</h2>
+        <form id="ticket-form">
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" placeholder="Short description of your issue" required maxlength="200" />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="6" placeholder="Describe your issue in detail..." required maxlength="2000"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="attachment">Attachment (Optional)</label>
+            <input type="file" id="attachment" accept="image/*,.pdf,.doc,.docx,.txt" />
+            <small>Max 5MB - Images, PDF, Word, or Text files</small>
+          </div>
+          <button type="submit" class="btn-primary">Submit Ticket</button>
+        </form>
+        <div id="form-msg" class="status"></div>
+      </section>
+
+      <!-- Ticket List -->
+      <section class="card">
+        <div class="card-header">
+          <h2 id="tickets-title">Your Tickets</h2>
+          <button id="refresh" class="btn-secondary">Refresh</button>
+        </div>
+        <div id="tickets-list" class="ticket-list">Loading…</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 Company Support Portal</p>
+    </footer>
+  </div>
+
+  <!-- Ticket Detail Modal -->
+  <div id="ticket-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modal-title">Ticket Details</h2>
+        <button id="modal-close" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="ticket-details"></div>
+        
+        <!-- Messages/Chat Section -->
+        <div class="messages-section">
+          <h3>Conversation</h3>
+          <div id="messages-list" class="messages-list"></div>
+          
+          <!-- Reply Form -->
+          <form id="reply-form" class="reply-form">
+            <textarea id="reply-message" rows="3" placeholder="Type your reply..." required></textarea>
+            <button type="submit" class="btn-primary">Send Reply</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="close-ticket-btn" class="btn-danger">Close Ticket</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

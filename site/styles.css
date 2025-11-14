@@ -1,0 +1,501 @@
+:root {
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --border: #d1d5db;
+  --primary: #1f4e79;
+  --primary-light: #2563eb;
+  --secondary: #475569;
+  --success: #059669;
+  --danger: #dc2626;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Login Screen */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.login-card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h1 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.help-text {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.header-container p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.95;
+  font-size: 0.95rem;
+}
+
+.btn-logout {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-logout:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  margin: 0 0 1.2rem 0;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+}
+
+input[type="file"] {
+  padding: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.btn-secondary:hover {
+  background: #64748b;
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+}
+
+.btn-success:hover {
+  background: #047857;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+}
+
+/* Status Messages */
+.status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.status:empty {
+  display: none;
+}
+
+/* Ticket List */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ticket-list {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.ticket {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  background: #fafafa;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ticket:hover {
+  background: #f3f4f6;
+}
+
+.ticket:last-child {
+  border-bottom: none;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.ticket strong {
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.ticket-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-open {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-closed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.ticket-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: var(--radius);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.btn-close:hover {
+  color: var(--text);
+}
+
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+#ticket-details {
+  margin-bottom: 2rem;
+}
+
+.detail-row {
+  margin-bottom: 1rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  color: var(--text);
+}
+
+.attachment-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  color: var(--primary);
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.attachment-link:hover {
+  background: var(--border);
+}
+
+/* Messages Section */
+.messages-section {
+  margin-top: 2rem;
+  border-top: 2px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.messages-section h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primary);
+}
+
+.messages-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background: #fafafa;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background: white;
+  border-left: 3px solid var(--primary);
+}
+
+.message:last-child {
+  margin-bottom: 0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.message-sender {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.message-time {
+  color: var(--muted);
+}
+
+.message-text {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.reply-form {
+  margin-top: 1rem;
+}
+
+.reply-form textarea {
+  margin-bottom: 0.75rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  margin-top: auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .header-container h1 {
+    font-size: 1.4rem;
+  }
+  
+  .btn-logout {
+    position: static;
+    display: block;
+    margin: 1rem auto 0;
+    width: auto;
+  }
+  
+  .card {
+    padding: 1.2rem;
+  }
+  
+  .ticket-header {
+    flex-direction: column;
+  }
+  
+  .ticket-status {
+    margin-top: 0.5rem;
+  }
+
+  .modal-content {
+    margin: 1rem;
+  }
+}
